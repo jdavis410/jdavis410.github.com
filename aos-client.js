@@ -8,7 +8,7 @@
 
     try {
       window.ReactNativeWebView.postMessage(COMMAND.checkInit);
-      window.addEventListener("message", message => {
+      document.addEventListener("message", message => {
         response = message.data;
         Response = message.data;
         console.log(message);
