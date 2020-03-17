@@ -1,5 +1,6 @@
 (function (global) {
   var Response;
+  document.addEventListener("message", message => { Response = message.data; console.log(response)});
   function isReactAppReady() {
     var response = null;
     if (!window.ReactNativeWebView) {
@@ -7,22 +8,19 @@
     }
 
     try {
+      Response = null;
       window.ReactNativeWebView.postMessage(COMMAND.checkInit);
-      document.addEventListener("message", message => {
-        response = message.data;
-        Response = message.data;
-        console.log(message);
-      });
-      if (response == null) {
+      
+      if (Response == null) {
         return false;
       }
       else {
-        return response;
+        return Response;
       }
     }
     catch(error) { console.log(error); }
 
-    return response;
+    return Response;
   }
 
   var aos = {
