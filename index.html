@@ -8,7 +8,8 @@
 <script src="aos-client.js"></script>
 <script>
     console.log(aos.isReady());
-    alert('' + aos.isReady());
+    if (window.ReactNativeWebView) { alert('yes');} else { alert('' + aos.isReady()); }
+    
 </script>
 </body>
 </html>
