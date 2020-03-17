@@ -9,7 +9,9 @@
 <script>
     console.log(aos.isReady());
     if (window.ReactNativeWebView) { alert('yes');} else { alert('' + aos.isReady()); }
+    function checkClick() { aos.isReady(); }
     
 </script>
+    <button onclick="checkClick()">Check Init</button>    
 </body>
 </html>
