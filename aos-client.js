@@ -9,7 +9,7 @@
 
     try {
       Response = null;
-      document.ReactNativeWebView.postMessage(COMMAND.checkInit);
+      window.ReactNativeWebView.postMessage( '' + COMMAND.checkInit);
       
       if (Response == null) {
         return false;
