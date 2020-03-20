@@ -7,15 +7,17 @@
 <body>
 <script src="aos-client.js"></script>
 <script>
+    window.addEventListener("message", message => {
+        alert('' + message.data);
+    });
     console.log(aos.isReady());
-    if (window.ReactNativeWebView) { alert('yes');} else { alert('' + aos.isReady()); }
+    alert('' + aos.isReady());
     function checkClick() { 
         var a = aos.isReady(); 
-        
         alert('' + a);
     }
     
 </script>
-    <button onclick="checkClick()">Check Init</button>    
+    <h1 onclick="checkClick()">Check Init</h1>    
 </body>
 </html>
